@@ -29,9 +29,9 @@ where and what size an ad should appear in that spot.
 
 In the above, we: 
 
-* Within the first SCRIPT tag, load the standard ad code library provided by Google DFP.
-* With the second SCRIPT tag, load our basic JavaScript wrapped class "CFLAdUtility" and make it available for use.
-* With the third SCRIPT tag, set the Network code, debug log level, and determine the ad unit and targeting information for ads displayed on the page 
+	* Within the first SCRIPT tag, load the standard ad code library provided by Google DFP.
+	* With the second SCRIPT tag, load our basic JavaScript wrapped class "CFLAdUtility" and make it available for use.
+	* With the third SCRIPT tag, set the Network code, debug log level, and determine the ad unit and targeting information for ads displayed on the page 
   using a pre-written list of rules found in the zone_definitions JavaScript array.
 
 3. Diving further into *cfl-ad-rules.js*, we need to first modify the value of *str_ad_network_code* to reflect the DFP network code for our website(s). 
