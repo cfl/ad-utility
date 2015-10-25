@@ -27,7 +27,7 @@ where and what size an ad should appear in that spot.
         <script type="text/javascript" src="cfl-ad-utility.js"></script>
         <script type="text/javascript" src="cfl-ad-rules.js"></script>
 
-In the above, we: 
+   In the above, we: 
 
 	* Within the first SCRIPT tag, load the standard ad code library provided by Google DFP.
 	* With the second SCRIPT tag, load our basic JavaScript wrapped class "CFLAdUtility" and make it available for use.
