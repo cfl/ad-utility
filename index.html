@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+    <head>
+        <meta charset='utf-8'>
+        <title>CFL AdUtility</title>
+
+        <script type="text/javascript">
+          var googletag = googletag || {};
+          googletag.cmd = googletag.cmd || [];
+          (function() {
+            var gads = document.createElement("script");
+            gads.async = true;
+            gads.type = "text/javascript";
+            var useSSL = "https:" == document.location.protocol;
+            gads.src = (useSSL ? "https:" : "http:") + "//www.googletagservices.com/tag/js/gpt.js";
+            var node =document.getElementsByTagName("script")[0];
+            node.parentNode.insertBefore(gads, node);
+           })();
+        </script>
+        <script type="text/javascript" src="cfl-ad-utility.js"></script>
+        <script type="text/javascript" src="cfl-ad-rules.js"></script>
+    </head>
+
+    <body>
+        <div id="ad_leaderboard">
+            <script>
+                window.CFLAdUtility.displayAd('ad_leaderboard', [728, 90]);
+            </script>
+        </div>
+
+        <br><br>
+
+        <div id="ad_bigbox">
+            <script>
+                window.CFLAdUtility.displayAd('ad_bigbox', [300, 250]);
+            </script>
+        </div>
+
+        <br><br>
+
+        <div id="ad_multiad">
+            <script>
+                window.CFLAdUtility.displayAd('ad_multiad', [ [300, 250], [160, 600], [300, 600] ]);
+            </script>
+        </div>
+    </body>
+</html>
