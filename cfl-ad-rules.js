@@ -1,4 +1,4 @@
-var str_ad_network_code = '8019';
+var str_ad_network_code = '103711331';
 var str_ad_log_level = 1;
 
 if ( typeof(adZone) == 'undefined' ) {
@@ -6,12 +6,122 @@ if ( typeof(adZone) == 'undefined' ) {
 		var str_zonedata = '';
 		var arr_targets = [];
 		var zone_definitions = new Array();
+		var obj_adutility = new CFLAdUtility();
 
-		zone_definitions.push(new Array( '/', 'cfl_network_web/CFL/homepage', [{'Zone': ['main', '/']}, {'Page': '/'}] ));
-		zone_definitions.push(new Array( '/standings', 'cfl_network_web/CFL/standings', [{'Zone': ['standings', '/standings']}, {'Page': '/standings'}] ));
-		zone_definitions.push(new Array( '/standings/*', 'cfl_network_web/CFL/standings', [{'Zone': ['standings', '/standings']}, {'Page': '/standings'}] ));
-		zone_definitions.push(new Array( '/standings/2015/reg', 'cfl_network_web/CFL/standings', [{'Zone': ['standings', '/standings/2015/reg']}, {'Page': '/standings/2015/reg'}] ));
-		zone_definitions.push(new Array( '/', 'cfl_network_web/TOR', [{'Zone': ['main', '/']}, {'Page': '/'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/standings', '', [{'title': 'standings'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/stats', '', [{'title': 'stats'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/league-leaders', '', [{'title': 'league-leaders'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/team-leaders', '', [{'title': 'team-leaders'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/nouvelles', '', [{'title': 'news'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/calendrier', '', [{'title': 'schedule'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/classement', '', [{'title': 'standings'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/stats-leaders', '', [{'title': 'stats'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/statistiques-equipes-lcf', '', [{'title': 'team-leaders'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+		zone_definitions.push(new Array( '/communaute', '', [{'title': 'community'}, {'site': 'lcf.ca'}], 'lcf.ca' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'bclions.com'}], 'bclions.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'bclions.com'}], 'bclions.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'bclions.com'}], 'bclions.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'bclions.com'}], 'bclions.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'bclions.com'}], 'bclions.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'bclions.com'}], 'bclions.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'bclions.com'}], 'bclions.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'esks.com'}], 'esks.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'esks.com'}], 'esks.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'esks.com'}], 'esks.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'esks.com'}], 'esks.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'esks.com'}], 'esks.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'esks.com'}], 'esks.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'esks.com'}], 'esks.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'stampeders.com'}], 'stampeders.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'stampeders.com'}], 'stampeders.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'stampeders.com'}], 'stampeders.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'stampeders.com'}], 'stampeders.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'stampeders.com'}], 'stampeders.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'stampeders.com'}], 'stampeders.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'stampeders.com'}], 'stampeders.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'riderville.com'}], 'riderville.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'riderville.com'}], 'riderville.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'riderville.com'}], 'riderville.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'riderville.com'}], 'riderville.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'riderville.com'}], 'riderville.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'riderville.com'}], 'riderville.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'riderville.com'}], 'riderville.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'site': 'argonauts.ca'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'ottawaredblacks.com'}], 'ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'ottawaredblacks.com'}], 'ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'ottawaredblacks.com'}], 'ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'ottawaredblacks.com'}], 'ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'ottawaredblacks.com'}], 'ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'ottawaredblacks.com'}], 'ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'ottawaredblacks.com'}], 'ottawaredblacks.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'fr.ottawaredblacks.com'}], 'fr.ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'fr.ottawaredblacks.com'}], 'fr.ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'fr.ottawaredblacks.com'}], 'fr.ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'fr.ottawaredblacks.com'}], 'fr.ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'fr.ottawaredblacks.com'}], 'fr.ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'fr.ottawaredblacks.com'}], 'fr.ottawaredblacks.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'fr.ottawaredblacks.com'}], 'fr.ottawaredblacks.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'montrealalouettes.com'}], 'montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'montrealalouettes.com'}], 'montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'montrealalouettes.com'}], 'montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'montrealalouettes.com'}], 'montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'montrealalouettes.com'}], 'montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'montrealalouettes.com'}], 'montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'montrealalouettes.com'}], 'montrealalouettes.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/roster', '', [{'title': 'roster'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/tim-hortons-field', '', [{'title': 'tim-hortons-field'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/video', '', [{'title': 'videos'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/2015-statistics', '', [{'title': 'stats'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/coaches', '', [{'title': 'coaches'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/depth-charts', '', [{'title': 'depth-charts'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/corporate-partners', '', [{'title': 'corporate-partners'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/cheerleaders', '', [{'title': 'cheerleaders'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
 
 		var str_path = window.location.pathname;
 		var str_domain = window.location.host;
@@ -58,6 +168,5 @@ var arr_zone_data = adZone();
 window.CFLAdUtility = new CFLAdUtility();
 window.CFLAdUtility.log_level = str_ad_log_level;
 window.CFLAdUtility.network_code = str_ad_network_code;
-window.CFLAdUtility.ad_unit = arr_zone_data[0];
 window.CFLAdUtility.targeting = arr_zone_data[1];
 window.CFLAdUtility.init();
