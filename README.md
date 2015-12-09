@@ -22,11 +22,11 @@ declaration is all that is needed to indicate where and what size an ad should a
 
 3. The next section to make modifications within *cfl-ad-rules.js* is within the ad definitions. A number of sample definitions are defined below:
 
-    zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'cfl.ca'}], 'cfl.ca' ));
-    zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
-    zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
-    zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
-    zone_definitions.push(new Array( '/videos/recaps', '', [{'title': 'videos-recaps'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+      zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+      zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+      zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+      zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
+      zone_definitions.push(new Array( '/videos/recaps', '', [{'title': 'videos-recaps'}, {'site': 'cfl.ca'}], 'cfl.ca' ));
 
    To explain each of the four (assuming the domain name of the website is http://www.cfl.ca/ ):
 
