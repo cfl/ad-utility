@@ -1,0 +1,53 @@
+<html>
+<body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+	<link type="text/css" rel="stylesheet" href="assets/featherlight.min.css"></link>
+	<script type="text/javascript" charset="utf-8" src="assets/featherlight.min.js"></script>
+
+	<script>
+	window.parent.ad_popup_click = function ad_popup_click() {
+		var click_through_url = 'http://mapleleafs.nhl.com/';
+		var click_url = 'https://adclick.g.doubleclick.net/aclk%253Fsa%253DL%2526ai%253DBMz40H8snV8f1GMbjBcTqgOADq96znQkAAAAQASCb9cEiOABYw_Hj_7QBYP2gmYHoA7IBCnd3dy5jZmwuY2G6AQlnZnBfaW1hZ2XIAQnaAR1odHRwOi8vd3d3LmNmbC5jYS9wb3B1cC10ZXN0L6kCrnTImjbEqj7AAgLgAgDqAhwvMTAzNzExMzMxL0NGTF9OZXR3b3JrX1BvcHVw-AL30R6QA-ADmAPgA6gDAdAEkE7gBAHSBQUQ47yHKpAGAaAGINgHAOAHCw%2526num%253D0%2526cid%253DCAASEuRoEhTy2VL5X_AZmrVnpdRimw%2526sig%253DAOD64_1xZRUxCxrg2WPpppxhA55kvElaOA%2526client%253Dca-pub-9368600075034057%2526adurl%253D';
+
+		// Register a hit to our Google DFP click URL.
+		var obj_image = new Image();
+		obj_image.src = click_url;
+		document.body.appendChild(obj_image);
+
+		// Open the click through URL in a new tab/window.
+		var win = window.open(click_through_url, '_blank');
+		win.focus();
+	}
+
+	jQuery( document ).ready(function() {
+		var css_url = 'assets/featherlight.min.css';
+		var js_url = 'assets/featherlight.min.js';
+		var arr_image_urls = ['Toronto-Mock-Mobile_ENG.jpg', 'Toronto-Mock-Mobile_ENG.jpg', 'Toronto-Mock-Mobile_ENG.jpg'];
+		//var arr_image_urls = ['%%FILE:JPG1%%', '%%FILE:JPG2%%', '%%FILE:JPG3%%', '%%FILE:JPG4%%', '%%FILE:JPG5%%', '%%FILE:JPG6%%', '%%FILE:JPG7%%', '%%FILE:JPG8%%', '%%FILE:JPG9%%'];
+		var num_image_selected = Math.floor((Math.random() * arr_image_urls.length));
+		var image_url = arr_image_urls[num_image_selected];
+
+		// Dynamically load and attach the CSS styles.
+		var obj_css = document.createElement("link");
+        obj_css.setAttribute("rel", "stylesheet");
+        obj_css.setAttribute("type", "text/css");
+        obj_css.setAttribute("href", css_url);
+        parent.document.getElementsByTagName("head")[0].appendChild(obj_css);
+
+        // Dynamically load and attach the JavaScript library.
+		var obj_js = document.createElement('script');
+        obj_js.setAttribute('type', 'text/javascript');
+        obj_js.setAttribute('src', js_url);
+        parent.document.getElementsByTagName("head")[0].appendChild(obj_js);
+
+		jQuery.featherlight(
+			'<a target="_blank" onclick="window.ad_popup_click();" href="javascript:void(0);"><img src="' + image_url + '">', 
+			{
+				root: window.parent.document.body
+			} 
+		);
+	});
+	</script>
+</body>
+</html>

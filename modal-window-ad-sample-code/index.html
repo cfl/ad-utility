@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<title>CFL Ads</title>
+		<script src="additional/jquery-1.7.0.min.js"></script>
+	</head>
+	<body>
+		<div style="padding: 50px; font-family: Arial;">
+			<u><b>How To Use</b></u>
+
+			<br><br>
+
+			1. In Google DFP, create a <a target="_blank" href="https://www.google.com/dfp/103711331#delivery/CreateOrderAndLineItems">New Order</a>.
+
+			<br><br>
+
+			2. In the Order's <b>Settings</b> tab, set the <b>Inventory Sizes</b> field to <b>1x2</b>.
+
+			<br><br>
+
+			3. Add targeting as needed to target the site (eg. <b>cfl.ca</b>) and title (eg. <b>home-page</b>) as needed.
+
+			<br><br>
+
+			4. Add a new creative, and select the <b>Custom</b> when selecting the creative type.
+
+			<br><br>
+
+			5. Use the <b>Upload Files</b> option to upload each of the following files to the new creative:
+
+			<br><br>
+
+			<div style="padding-left: 40px;">
+				<a href="assets/featherlight.min.js">featherlight.min.js</a><br>
+				<a href="assets/featherlight.min.css">featherlight.min.css</a><br>
+				Whatever image file you wish to serve up as the ad
+			</div>
+
+			<br>
+
+			6. Fill out the <b>Click-through URL</b> field with the URL you want the site visitor to go to if they click on the ad.
+
+			<br><br>
+
+			7. Paste the following into the <b>Code Snippet</b> field:
+
+			<br><br>
+
+			<pre style="color: #fff; background-color: #000; padding: 20px;">
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js">&lt;/script>
+
+&lt;link type="text/css" rel="stylesheet" href="%%FILE:CSS1%%">&lt;/link>
+&lt;script type="text/javascript" charset="utf-8" src="%%FILE:JS1%%">&lt;/script>
+
+&lt;script>
+window.parent.ad_popup_click = function ad_popup_click() {
+	var click_through_url = '%%DEST_URL%%';
+	var click_url = '%%CLICK_URL_ESC%%';
+
+	// Register a hit to our Google DFP click URL.
+	var obj_image = new Image();
+	obj_image.src = click_url;
+	document.body.appendChild(obj_image);
+
+	// Open the click through URL in a new tab/window.
+	var win = window.open(click_through_url, '_blank');
+	win.focus();
+}
+
+jQuery( document ).ready(function() {
+	var css_url = '%%FILE:CSS1%%';
+	var js_url = '%%FILE:JS1%%';
+	var image_url = '%%FILE:JPG1%%';
+
+	// Dynamically load and attach the CSS styles.
+	var obj_css = document.createElement("link");
+	obj_css.setAttribute("rel", "stylesheet");
+	obj_css.setAttribute("type", "text/css");
+	obj_css.setAttribute("href", css_url);
+	parent.document.getElementsByTagName("head")[0].appendChild(obj_css);
+
+	// Dynamically load and attach the JavaScript library.
+	var obj_js = document.createElement('script');
+	obj_js.setAttribute('type', 'text/javascript');
+	obj_js.setAttribute('src', js_url);
+	parent.document.getElementsByTagName("head")[0].appendChild(obj_js);
+
+	jQuery.featherlight(
+		'&lt;a target="_blank" onclick="window.ad_popup_click();" href="javascript:void(0);">&lt;img src="' + image_url + '">', 
+		{
+			root: window.parent.document.body
+		} 
+	);
+});
+&lt;/script>
+			</pre>
+
+			<br>
+
+			8. That should do it - if all of the file macros line up (double check that), the ad should start firing when the creative and order are approved.
+		</div>
+
+		<iframe id="dfp_iframe_simulator" title="3rd party ad content" name="dfp_iframe_simulator" width="1" height="2" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" src="iframe.html" style="border: 0px; vertical-align: bottom;"></iframe>
+	</body>
+</html>

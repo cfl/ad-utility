@@ -1,5 +1,4 @@
 var str_ad_network_code = '103711331';
-var str_ad_log_level = 1;
 
 if ( typeof(adZone) == 'undefined' ) {
 	var adZone = function() {
@@ -69,7 +68,7 @@ if ( typeof(adZone) == 'undefined' ) {
 		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
 		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'bluebombers.com'}], 'bluebombers.com' ));
 
-		zone_definitions.push(new Array( '/*', '', [{'site': 'argonauts.ca'}], 'argonauts.ca' ));
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
 		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
 		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
 		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'argonauts.ca'}], 'argonauts.ca' ));
@@ -109,19 +108,21 @@ if ( typeof(adZone) == 'undefined' ) {
 		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
 		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'en.montrealalouettes.com'}], 'en.montrealalouettes.com' ));
 
-		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/roster', '', [{'title': 'roster'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/tickets', '', [{'title': 'tickets'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/tim-hortons-field', '', [{'title': 'tim-hortons-field'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/video', '', [{'title': 'videos'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/2015-statistics', '', [{'title': 'stats'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/coaches', '', [{'title': 'coaches'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/depth-charts', '', [{'title': 'depth-charts'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/corporate-partners', '', [{'title': 'corporate-partners'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
-		zone_definitions.push(new Array( '/cheerleaders', '', [{'title': 'cheerleaders'}, {'site': 'ticats.ca'}], 'ticats.ca' ));
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'schooners.ca'}], 'schooners.ca' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'schooners.ca'}], 'schooners.ca' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'schooners.ca'}], 'schooners.ca' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'schooners.ca'}], 'schooners.ca' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'schooners.ca'}], 'schooners.ca' ));
+		zone_definitions.push(new Array( '/standings', '', [{'title': 'standings'}, {'site': 'schooners.ca'}], 'schooners.ca' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'schooners.ca'}], 'schooners.ca' ));
+
+		zone_definitions.push(new Array( '/*', '', [{'title': obj_adutility.getPageTitleAsKeywords()}, {'site': 'fr.schooners.ca'}], 'fr.schooners.ca' ));
+		zone_definitions.push(new Array( '/', '', [{'title': 'home-page'}, {'site': 'fr.schooners.ca'}], 'fr.schooners.ca' ));
+		zone_definitions.push(new Array( '/news', '', [{'title': 'news'}, {'site': 'fr.schooners.ca'}], 'fr.schooners.ca' ));
+		zone_definitions.push(new Array( '/videos', '', [{'title': 'videos'}, {'site': 'fr.schooners.ca'}], 'fr.schooners.ca' ));
+		zone_definitions.push(new Array( '/schedule', '', [{'title': 'schedule'}, {'site': 'fr.schooners.ca'}], 'fr.schooners.ca' ));
+		zone_definitions.push(new Array( '/standings', '', [{'title': 'standings'}, {'site': 'fr.schooners.ca'}], 'fr.schooners.ca' ));
+		zone_definitions.push(new Array( '/community', '', [{'title': 'community'}, {'site': 'fr.schooners.ca'}], 'fr.schooners.ca' ));
 
 		var str_path = window.location.pathname;
 		var str_domain = window.location.host;
@@ -159,6 +160,8 @@ if ( typeof(adZone) == 'undefined' ) {
 				}
 			}
 		}
+
+		arr_targets.push({'pathname': window.location.pathname});
 		
 		return (new Array(str_zonedata, arr_targets));
 	};
@@ -166,7 +169,7 @@ if ( typeof(adZone) == 'undefined' ) {
 var arr_zone_data = adZone();
 
 window.CFLAdUtility = new CFLAdUtility();
-window.CFLAdUtility.log_level = str_ad_log_level;
+window.CFLAdUtility.log_level = window.CFLAdUtility.getLogLevelFromURL();
 window.CFLAdUtility.network_code = str_ad_network_code;
 window.CFLAdUtility.targeting = arr_zone_data[1];
 window.CFLAdUtility.init();
